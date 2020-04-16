@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: WDD
-  Date: 2019/6/16
-  Time: 12:49
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -36,16 +29,16 @@
         <div class="layui-inline">
             <input class="layui-input" name="author" id="author" autocomplete="off" placeholder="请输入作者">
         </div>
-        <div class="layui-inline">
-            <div class="layui-input-block">
-                <select name="cid" id="cid">
-                    <option value="">请选择书本类别</option>
-                    <c:forEach items="${category}" var="ctg">
-                        <option value="${ctg.cid}">${ctg.cname}</option>
-                    </c:forEach>
-                </select>
-            </div>
-        </div>
+        <%--<div class="layui-inline">--%>
+            <%--<div class="layui-input-block">--%>
+                <%--<select name="cid" id="cid">--%>
+                    <%--<option value="">请选择书本类别</option>--%>
+                    <%--<c:forEach items="${category}" var="ctg">--%>
+                        <%--<option value="${ctg.cid}">${ctg.cname}</option>--%>
+                    <%--</c:forEach>--%>
+                <%--</select>--%>
+            <%--</div>--%>
+        <%--</div>--%>
         <button class="layui-btn" data-type="reload">搜索</button>
     </div>
 </div>
