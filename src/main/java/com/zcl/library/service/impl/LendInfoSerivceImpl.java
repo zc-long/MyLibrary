@@ -41,6 +41,7 @@ public class LendInfoSerivceImpl implements LendInfoSerivce {
         lendInfoMapper.backbook(ret);
     }
 
+
     @Override
     public boolean isLended(LendInfo lendInfo) {
         return lendInfoMapper.isLended(lendInfo)>0 ? true:false;

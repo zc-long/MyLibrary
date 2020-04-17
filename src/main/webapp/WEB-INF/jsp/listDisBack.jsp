@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>读者未还图书</title>
+    <title>图书管理系统</title>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -94,7 +94,7 @@
                 ,{field: 'fine', title: '产生罚款罚款', width: 100,templet: function(d){
                     return d.fine=="0"?'':'<a style="font-size:1.5em;color: red;font-weight: bold">'+d.fine+'元</a>';
                 }}
-                ,{fixed: 'right', title: '操作',width: 200, align:'center', toolbar: '#barDemo'}
+                ,{fixed: 'right', title: '状态',width: 200, align:'center', toolbar: '#barDemo'}
             ]]
 
             //用于搜索结果重载
@@ -123,10 +123,7 @@
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
         });
-
-
     });
-
 </script>
 </body>
 </html>

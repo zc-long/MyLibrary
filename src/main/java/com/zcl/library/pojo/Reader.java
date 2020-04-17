@@ -11,7 +11,7 @@ public class Reader implements Serializable {
     private String birthday;// 用于添加出生日期
     private String address;
     private String telephone;//电话
-    private Integer card_state;//读者等级
+    private Integer card_state;//读者可借数量
 
     public Integer getId() {
         return id;

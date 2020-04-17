@@ -32,7 +32,6 @@ public class libraryController {
     @Autowired
     private LendInfoSerivce lendInfoSerivce;
 
-
     @RequestMapping("/index")
     public String index(HttpSession session){
         //获取类别
@@ -57,16 +56,9 @@ public class libraryController {
         if(StringUtil.isNotEmpty(author))  paramMap.put("author",author);
         if(StringUtil.isNotEmpty(cid))  paramMap.put("cid",Integer.parseInt(cid));
         PageBean<Book> pageBean = bookService.queryBookPage(paramMap);
-
         //获取类别
         List<Category> categoryList = bookService.listCategory();
         session.setAttribute(Const.CATEGORY,categoryList);
-
-        // 转化为json
-        //List<Book> list = bookService.listAllBook(pageBean);
-        //PageBean pb=bookService.getPb();
-        // 讲json发送给浏览器
-        // list转成json
         JSONObject obj = new JSONObject();
         // Layui table 组件要求返回的格式
         obj.put("code", 0);
@@ -136,7 +128,6 @@ public class libraryController {
         return "book/addBook";
     }
 
-
     //删除图书
     @RequestMapping("/delBook")
     @ResponseBody
@@ -154,7 +145,6 @@ public class libraryController {
         return ajaxResult;
     }
 
-
     //跳转读者借阅界面readerIndex.jsp
     @RequestMapping("/frontIndex")
     public String frontIndex() {
@@ -165,7 +155,6 @@ public class libraryController {
     @ResponseBody
     public AjaxResult borrowBook(Integer book_id,HttpSession session) {
         AjaxResult ajaxResult = new AjaxResult();
-
         Reader reader = (Reader)session.getAttribute(Const.READER);
         //判断库存是否足够
         Book book = bookService.selectById(book_id);
@@ -173,7 +162,6 @@ public class libraryController {
             ajaxResult.setStatus("2");
             return ajaxResult;
         }
-
         //判断该读者是否已经借过该图书
         LendInfo lendInfo = new LendInfo();
         lendInfo.setBook_id(book_id);
@@ -187,11 +175,9 @@ public class libraryController {
         if (cardState.equals(reader.getCard_state())){
             ajaxResult.setStatus("3");
             return ajaxResult;
-
         }
         lendInfoSerivce.lendBook(lendInfo);
         ajaxResult.setStatus("1");
         return ajaxResult;
     }
-
 }

@@ -3,19 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zcl.library.dao.LendInfoMapper">
-    <!--<resultMap type="com.wdd.library.pojo.LendInfo" id="Lendinfo">-->
-        <!--<result column="id" property="id"/>-->
-        <!--<result column="reader_id" property="reader_id"/>-->
-        <!--<result column="book_id" property="book_id"/>-->
-        <!--<result column="lend_date" property="lend_date"/>-->
-        <!--<result column="back_date" property="back_date"/>-->
-        <!--<result column="fine" property="fine"/>-->
-        <!--<result column="state" property="state"/>-->
-        <!--<association  javaType="Reader" property="reader">-->
-            <!--<result column="cid" property="cid"/>-->
-            <!--<result column="cname" property="cname"/>-->
-        <!--</association>-->
-    <!--</resultMap>-->
 
 
     <select id="queryList" resultType="Lendinfo" >
@@ -71,8 +58,7 @@
 
     <!--归还图书-->
     <update id="backbook">
-        UPDATE lend_list set state=1 ,fine=0 where reader_id=#{reader_id} and book_id=#{book_id};
-        UPDATE book_info set stock=stock+1 where book_id=#{book_id};
+     update lend_list set state=1 where book_id = #{book_id} and reader_id = #{reader_id};
     </update>
 
     <!-- 判断读者是否借过此书-->

@@ -1,12 +1,12 @@
 package com.zcl.library.pojo;
 
 public class Book {
-    private Integer book_id;// 书本编号
+    private Integer book_id;// 书籍编号
     private String name;
     private String author;
     private String publish;// 出版社
     private String ISBN;
-    private String introduction;// 介绍
+    private String introduction;// 简介
     private String language;
     private double price;
     private String pubdate;// 出版时间

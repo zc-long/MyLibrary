@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>读者未还图书</title>
+    <title>图书管理系统</title>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -26,7 +26,7 @@
         </div>
         <button class="layui-btn" data-type="reload">搜索</button>
     </div>
-    <%--    <a  style="margin-left: 70px" class="layui-btn layui-btn-normal" onclick="add();">添加图书</a>--%>
+
 </div>
 
 <table class="layui-hide" id="demo" lay-filter="test"></table>
@@ -35,9 +35,7 @@
     <div id="pageDemo"></div>
 </div>
 <script type="text/html" id="barDemo">
-        <%--<a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="detail">查看</a>--%>
-        <%--<a class="layui-btn layui-btn-sm" lay-event="edit">编辑</a>--%>
-        <%--<a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>--%>
+
     {{#  if(d.state =="2"){ }}
     <a class="layui-btn layui-btn-normal backBook" lay-event="backBook">确认归还</a>
     {{#  } }}

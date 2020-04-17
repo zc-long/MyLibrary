@@ -14,55 +14,7 @@
         <result column="telephone" property="telephone"/>
         <result column="card_state" property="card_state"/>
     </resultMap>
-    <!--<select id="findReader"  resultMap="Reader" parameterType="PageBean">-->
-        <!--&lt;!&ndash; 根据条件查询 读者的所有信息 &ndash;&gt;-->
-        <!--select-->
-        <!--reader_id,-->
-        <!--name,-->
-        <!--sex,-->
-        <!--birth,-->
-        <!--address,-->
-        <!--telcode,-->
-        <!--card_state-->
-        <!--from-->
-        <!--reader_info-->
-        <!--<where>-->
-            <!--<if test="reader_id!=null and reader_id!=''">-->
-                <!--and reader_id like '%${reader_id}%'-->
-            <!--</if>-->
-            <!--<if test="rname!=null and rname!=''">-->
-                <!--and name like '%${rname}%'-->
-            <!--</if>-->
-        <!--</where>-->
-        <!--<if test="currentPage!=null and currentPage!=''">-->
-            <!--limit #{index}, #{pageSize}-->
-        <!--</if>-->
-    <!--</select>-->
 
-    <!-- 查询条数 -->
-    <!--<select id="readerCount" parameterType="PageBean" resultType="Integer">-->
-        <!--select COUNT(*) FROM reader_info-->
-        <!--<where>-->
-            <!--<if test="reader_id!=null and reader_id!=''">-->
-                <!--and reader_id like '%${reader_id}%'-->
-            <!--</if>-->
-            <!--<if test="rname!=null and rname!=''">-->
-                <!--and name like '%${rname}%'-->
-            <!--</if>-->
-        <!--</where>-->
-    <!--</select>-->
-
-    <!-- 修改读者 -->
-    <!--<select id="updateReader" parameterType="Reader" >-->
-        <!--UPDATE  reader_info SET-->
-        <!--name=#{name},-->
-        <!--sex=#{sex},-->
-        <!--birth=#{birth2},-->
-        <!--address=#{address},-->
-        <!--telcode=#{telcode},-->
-        <!--card_state=#{card_state}-->
-        <!--where reader_id=#{reader_id}-->
-    <!--</select>-->
 
     <!-- 添加读者 -->
     <insert id="addReader" parameterType="Reader" >

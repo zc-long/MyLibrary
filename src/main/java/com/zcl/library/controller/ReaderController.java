@@ -98,11 +98,11 @@ public class ReaderController {
         try{
             readerService.delReader(id);
             ajaxResult.setSuccess(true);
-            ajaxResult.setMessage("添加成功");
+            ajaxResult.setMessage("删除成功");
         }catch (Exception e){
             e.printStackTrace();
             ajaxResult.setSuccess(false);
-            ajaxResult.setMessage("添加失败");
+            ajaxResult.setMessage("删除失败");
         }
         return ajaxResult;
     }

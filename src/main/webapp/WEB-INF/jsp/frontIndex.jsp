@@ -29,16 +29,6 @@
         <div class="layui-inline">
             <input class="layui-input" name="author" id="author" autocomplete="off" placeholder="请输入作者">
         </div>
-        <%--<div class="layui-inline">--%>
-            <%--<div class="layui-input-block">--%>
-                <%--<select name="cid" id="cid">--%>
-                    <%--<option value="">请选择书本类别</option>--%>
-                    <%--<c:forEach items="${category}" var="ctg">--%>
-                        <%--<option value="${ctg.cid}">${ctg.cname}</option>--%>
-                    <%--</c:forEach>--%>
-                <%--</select>--%>
-            <%--</div>--%>
-        <%--</div>--%>
         <button class="layui-btn" data-type="reload">搜索</button>
     </div>
 </div>
@@ -156,7 +146,6 @@
                 type: 'post',
                 success: function (data) {
                     if (data.status == '1') {
-
                         //当前行数
                         var i = $("tr").index(obj.tr) - 1;
                         //获取当前dom
@@ -174,7 +163,6 @@
                             stock: data1.stock - 1
                         });
                         layer.close(index);
-
                     } else if (data.status == '0') {
                         layer.msg('您已经借过该图书!', {icon: 5});
                     }else if (data.status == '3') {
